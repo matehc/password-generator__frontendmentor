@@ -184,6 +184,7 @@ div.password__copy:hover svg:hover > path {
 }
 
 label {
+  margin-left: 20px;
   display: inline-block;
   font-size: 1rem;
 }
@@ -305,31 +306,60 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 
 .option-box {
+  display: flex;
   margin-block-end: 3px;
   margin-right: 7px;
 }
 
 input[type="checkbox"] {
+  --webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
   accent-color: var(--accent-color);
   position: relative;
   background-color: var(--main-bg-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: 1px solid var(--accent-color);
 }
 
 /* input[type="checkbox"]:checked {
   color: #fff;
 } */
 
-input[type="checkbox"]:before {
-  content: "";
+input[type="checkbox"]::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  content: "\f00c";
   position: absolute;
-  width: 16px;
-  height: 16px;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
   top: 0;
-  left: 0;
   border: 1px solid var(--accent-color);
-  border-radius: 3px;
   padding: 1px;
   background-color: var(--main-bg-color);
+  color: #fff;
+  text-align: center;
+  display: none;
+}
+
+/* input[type="checkbox"]:hover {
+  background-color: var(--accent-color);
+} */
+
+input[type="checkbox"]:checked {
+  background-color: var(--accent-color);
+}
+
+input[type="checkbox"]:checked::after {
+  background-color: var(--accent-color);
+  border: none;
+  display: block;
 }
 
 .password__strength {
