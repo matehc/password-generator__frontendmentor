@@ -17,17 +17,16 @@ lengthDisplayEl.innerText = rangeInputEl.value;
 const generateBtn = document.querySelector('.generate-btn');
 
 rangeInputEl.addEventListener('input', (e)=> {
-    let target = e.target
-    const min = target.min
-    const max = target.max
-    const val = target.value
-    
+    let target = e.target;
+    const min = target.min;
+    const max = target.max;
+    const val = target.value;
     target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%';
 
     lengthDisplayEl.innerText = rangeInputEl.value;
     passwordLength=rangeInputEl.value;
 
-    generatePassword()
+    generatePassword();
 })
 
 
